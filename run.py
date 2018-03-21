@@ -22,13 +22,15 @@ with open(full_piece, 'r') as file:
     data = json.load(file)
 
 
-bpm = 60
+bpm = data["initial tempo"]
 beat = 0
 measure = 1
 time_signature = data["time signature"][0]
 
+
 if data["time signature"][1] != 4:
     raise ValueError("Cannot have a base other than 4 in the time signature.")
+
 
 def on_beat():
     global beat
@@ -45,6 +47,6 @@ def on_beat():
     print("Tempo: {}\nM: {}\nB: {}\n==========".format(bpm, measure, beat))
 
 
-while True:
+while measure <= data["total measures"]:
     time.sleep(60/bpm)
     on_beat()
