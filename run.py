@@ -18,7 +18,7 @@ piece = "mountain_king.json"
 
 import time
 import json
-from pygame import mixer
+from pygame.mixer import music
 
 
 
@@ -80,10 +80,10 @@ def on_beat():
 
         #Check if we are playing the beat accented or not
         if beat in data["options"]["accented beats"]:
-            mixer.music.load(audio_set["acnt"])
+            music.load(audio_set["acnt"])
         else:
-            mixer.music.load(audio_set["norm"])
-        mixer.music.play()
+            music.load(audio_set["norm"])
+        music.play()
     
     #Check if we are emitting a terminal signal
     if data["options"]["interface"]["visual"]:
