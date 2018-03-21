@@ -1,5 +1,16 @@
 {
-  "time signature": [2, 4],
+  "options": {
+    "interface": {
+      "audio": true,
+      "visual": true
+    },
+    "audio": {
+      "normal": "Blip_1.ogg",
+      "accented": "Blip_3.ogg"
+    },
+    "accented beats": [1]
+  },
+  "time signature": 4,
   "total measures": 129,
   "initial tempo": 81,
   "tempo changes": {
